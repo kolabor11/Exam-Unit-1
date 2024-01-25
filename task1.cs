@@ -1,17 +1,31 @@
-// Your program should start at this line.
-/*
-Example:
-Move();
-Move();
-Move();
-Turn();
-Move();
-Move();
-Turn();
-Turn();
-Turn();
-Move();
-*/
+  int turns = 0;  
+
+    while (!AtGoal())
+    {
+        if (Peek())
+        {
+            Move();
+        }
+        else
+        {
+            
+            if (turns % 2 == 0)
+            {
+                
+                Turn();
+            }
+            else
+            {
+              
+                Turn();
+                Turn();
+                Turn();
+            }
+
+            
+            turns++;
+        }
+    }
 
 
 #region Basic functions
