@@ -5,10 +5,8 @@ while (!AtGoal())
             Move();
         }
         else
-        {
-            
-            Turn();
-            
+        {   
+            Turn(); 
         }
     }
 

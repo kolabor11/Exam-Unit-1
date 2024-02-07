@@ -16,10 +16,7 @@
             }
             else
             {
-              
-                Turn();
-                Turn();
-                Turn();
+                TurnLeft()
             }
 
             
@@ -31,6 +28,14 @@
 #region Basic functions
 // These functions are just her to make your intelisense work. 
 // They only have a conceptual function.
+
+void TurnLeft()
+{
+    // Perform the equivalent of a left turn (e.g., three right turns)
+    Turn();
+    Turn();
+    Turn();
+}
 
 void Move()
 {
