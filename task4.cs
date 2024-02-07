@@ -1,3 +1,33 @@
+ public static void Main(string[] args)
+    {
+        FollowRightWall();
+    }
+
+    public static void FollowRightWall()
+    {
+        while (!AtGoal())
+        {
+            if (PeekRight()) 
+            {
+                if (Peek()) 
+                {
+                    Move();
+                }
+                else
+                {
+                    TurnLeft();
+                }
+            }
+            else
+            {
+                TurnRight();
+                Move();
+            }
+        }
+        Console.WriteLine("Reached the goal!");
+    }
+
+/*
 while (!AtGoal()){
 
 PerformSequence(new (Action, int)[] {
@@ -57,65 +87,10 @@ void PerformSequence((Action, int)[] sequence)
         }
     }
 }
+this code is an more hardcode alternative, if the follow right wall function I used is wrong
+*/
 
 
-
-
-/*const int MAX_DIRECTIONS = 4;
-int turnCount = 0;
-while (!AtGoal())
-
-    int availableDirections = CountAvailableDirections(); 
-
-    if (Peek() && availableDirections == 1 )
-    {
-        Move();
-    }
-    else
-    {
-        
-        else if (Peek() && availableDirections == 1 )
-        {
-            Move()
-        }
-        else if (availableDirections == 3)
-        {
-            if (turnCount % 2 == 0)
-            {
-                TurnRight();
-                Move();
-            }
-            else if (turnCount % 1 == 0)
-            {
-                TurnLeft();
-                Move();
-            }
-            else
-            {
-                // Go straight
-            }
-        }
-        else if (availableDirections == 4)
-        {
-           
-            if (turnCount % 2 == 0)
-            {
-                Turn();
-            }
-        
-            else
-            {
-                Move();
-            }
-        }
-
-        turnCount++;
-    }
-
-    Here is an idea I had to make the car act different based on the amount of turns 
-    it made and possible directions to go but It did not let anywherem i am gonna leave it here, 
-    maybe I will get some point s for an idea itself.
-    */
 
 
 
