@@ -1,27 +1,27 @@
  
 
- while (!AtGoal())
+while (!AtGoal())
+{
+    if (Peek()) 
     {
-        if (Peek())
+        Move(); 
+    }
+    else 
+    {
+        TurnRight(); 
+        
+        if (Peek()) 
         {
-            Move();
+            Move(); 
         }
-        else
+        else 
         {
-            
-            if (isRightTurn)
-            {
-                TurnRight();
-            }
-            else
-            {
-                TurnLeft();
-            }
-
-           
-            isRightTurn = !isRightTurn;
+            TurnLeft(); 
+            TurnLeft(); 
+            Move(); 
         }
     }
+}
 
 
 #region Basic functions
@@ -51,11 +51,6 @@ bool Peek()
     return true; // Just a placeholder value. 
 }
 
-bool isRightTurn = true;
-{
-    //Returns true if the cell in front of the car after turning 90 degress clockwise is open, otherwise false.
-    return true; // Just a placeholder value.
-}
 bool AtGoal()
 {
     // Returns true if the current cell is the goal cell.

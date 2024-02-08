@@ -1,28 +1,33 @@
-  int turns = 0;  
 
-    while (!AtGoal())
+int turns = 0;
+
+while (!AtGoal())
+{
+    if (Peek())
     {
-        if (Peek())
-        {
-            Move();
-        }
-        else
-        {
-            
-            if (turns % 2 == 0)
-            {
-                
-                Turn();
-            }
-            else
-            {
-                TurnLeft()
-            }
-
-            
-            turns++;
-        }
+        Move();
     }
+    else
+    {
+        if (turns % 4 < 2) 
+        {
+            Turn();
+        }
+        else 
+        {
+            Turn();
+            Turn(); 
+        }
+
+        turns++;
+    }
+
+    
+    if (turns == 4)
+    {
+        turns = 0;
+    }
+}
 
 
 #region Basic functions
